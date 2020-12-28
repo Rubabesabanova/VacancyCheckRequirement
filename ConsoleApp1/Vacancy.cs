@@ -4,21 +4,11 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    class Vacancy
+    class Vacancy : CommonModel
     {
-        public int id { get; set; }
-        public string job_name { get; set; }
-        public bool require_ms_certificate { get; set; }
+        public int DepartmentId { get; set; }
+        public string Requirement { get; set; }
         
-        public bool CheckCandidate(Candidate candidate)
-        {
-            if (candidate.ms_certificate == require_ms_certificate)
-            {
-                Console.WriteLine("ZOOM meeting ve ya real ofis daxilinde intervyu teshkil etmek mumkundur");
-                return true;
-            }
-            Console.WriteLine("ZOOM meeting ve ya real ofis daxilinde intervyu teshkil etmek mumkun deyil");
-            return false;
-        }
+        
     }
 }

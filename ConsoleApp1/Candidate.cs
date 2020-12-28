@@ -4,21 +4,25 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    class Candidate
+    class Candidate : CommonModel
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public bool ms_certificate;
-        public bool location;//Eger shirketin addresi sene rahat deyilse False
+        public string Surname { get; set; }
+        public float Experience { get; set; }
+        public bool Progress { get; set; }
+        public bool Location { get; set; }//Eger shirketin addresi sene rahat deyilse False
 
-        public bool CheckLocation()
+        #region full name 
+        public string FullName => $"{Name} {Surname}";
+        #endregion
+
+        public bool CheckCandidate()
         {
-            if (location == true)
+            if (Experience > 0 | Progress)
             {
-                Console.WriteLine("Sizinle real ofis daxilinde intervyu teskil edeceyik");
+                Console.WriteLine("Sizi intervyuya devet edirik");
                 return true;
             }
-            Console.WriteLine("Sizinle ZOOM meeting intervyu teskil edeceyik");
+            Console.WriteLine("Sizi bir nece ilden sonra gormeye sad olariq");
             return false;
         }
     }

@@ -6,18 +6,40 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            // Holding Object
+            Holding holding = new Holding()
+            {
+                Id = 1,
+                Name = "Pasha Holding",
+            };
+            // Company Object
             Company company = new Company()
             {
-                id=1,
-                name="Azerfon",
+                Id=1,
+                Name="Pasha Sigorta",
             };
-            Vacancy soft_vacany=new Vacancy() { 
-            id=1,
-            job_name="Software Developer",
-            require_ms_certificate=true,
+            // Department Objects
+            Department department1 = new Department()
+            {
+                Id = 1,
+                Name = SpecialtyEnum.Marketing.ToString(),
             };
-            company.vacancies.Add(soft_vacany);
-            company.Declaration(soft_vacany);
+            Department department2 = new Department()
+            {
+                Id = 1,
+                Name = SpecialtyEnum.Maliyye.ToString(),
+            };
+            Department department3 = new Department()
+            {
+                Id = 1,
+                Name = SpecialtyEnum.İnformasiyaTexnologiyalari.ToString(),
+            };
+            // Vacancy Objects
+            Vacancy vacancy1 =new Vacancy() {
+                Id = 1,
+                Name = SpecialtyEnum.Marketing.ToString(),
+            };
+            company.Announcment(vacancy1);
             Vacancy project_vacany = new Vacancy()
             {
                 id = 1,

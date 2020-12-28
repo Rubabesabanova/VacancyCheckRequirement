@@ -4,16 +4,17 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    class Company
+    class Company : CommonModel
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public List<Vacancy> vacancies = new List<Vacancy>();
+        public int HoldingId { get; set; }
 
-        public void Declaration(Vacancy vacany)
+        public void Announcment(Vacancy vacany)
         {
-            Console.WriteLine($"{vacany.job_name} adli vakansiya elan olundu.");
+            Console.WriteLine($"{vacany.Name} adli vakansiya elan olundu. Vakansiya telebleri : {vacany.Requirement}");
         }
-
+        public void Interview(bool change)
+        {
+            
+        }
     }
 }
