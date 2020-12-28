@@ -8,18 +8,28 @@ namespace ConsoleApp1
     {
         public bool HrQA(Candidate candidate)
         {
-            Console.WriteLine($"{Name} sual-cavab kecirilir");
+            Console.WriteLine($"HR sual-cavab kecirilir");
             if (candidate.Experience > 0 & candidate.Progress)
             {
-                Console.WriteLine($"Siz {Name} ile intervyunu kecdiniz");
+                Console.WriteLine($"Siz HR ile intervyunu kecdiniz");
                 return true;
             }
-            Console.WriteLine($"Siz {Name} ile intervyunu kecmediniz");
+            Console.WriteLine($"Siz HR ile intervyunu kecmediniz");
             return false;
         }
-        public bool EmployeeQA(Candidate candidate)
+
+        public bool EmployeeQA(Candidate candidate, Vacancy vacancy)
         {
-            if (HrQA(candidate)){
+            bool accepted;
+            if (vacancy.Interview)
+            {
+                accepted = true;
+            }
+            else
+            {
+                accepted = HrQA(candidate);
+            }
+            if (accepted){
                 Console.WriteLine($"{Name} ile sual-cavab kecirilir");
                 Console.WriteLine($"Siz {Name} ile intervyunu kecdiniz");
                 return true;
@@ -27,9 +37,9 @@ namespace ConsoleApp1
             return false;
             
         }
-        public bool HireEmployee(Candidate candidate)
+        public bool HireEmployee(Candidate candidate, Vacancy vacancy)
         {
-            if (EmployeeQA(candidate))
+            if (EmployeeQA(candidate, vacancy))
             {
                 Console.WriteLine("Siz ise qebul olundunuz");
                 return true;

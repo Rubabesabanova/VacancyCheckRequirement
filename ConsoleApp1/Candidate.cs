@@ -9,7 +9,6 @@ namespace ConsoleApp1
         public string Surname { get; set; }
         public float Experience { get; set; }
         public bool Progress { get; set; }
-        public bool Location { get; set; }//Eger shirketin addresi sene rahat deyilse False
 
         #region full name 
         public string FullName => $"{Name} {Surname}";

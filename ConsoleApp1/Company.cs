@@ -12,9 +12,6 @@ namespace ConsoleApp1
         {
             Console.WriteLine($"{vacany.Name} adli vakansiya elan olundu. Vakansiya telebleri : {vacany.Requirement}");
         }
-        public void Interview(bool change)
-        {
-            
-        }
+        
     }
 }

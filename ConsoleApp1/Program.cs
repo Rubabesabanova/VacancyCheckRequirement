@@ -26,48 +26,57 @@ namespace ConsoleApp1
             };
             Department department2 = new Department()
             {
-                Id = 1,
+                Id = 2,
                 Name = SpecialtyEnum.Maliyye.ToString(),
             };
             Department department3 = new Department()
             {
-                Id = 1,
+                Id = 3,
                 Name = SpecialtyEnum.İnformasiyaTexnologiyalari.ToString(),
             };
             // Vacancy Objects
-            Vacancy vacancy1 =new Vacancy() {
+            Vacancy vacancy1 = new Vacancy() {
                 Id = 1,
                 Name = SpecialtyEnum.Marketing.ToString(),
+                DepartmentId = 1,
+                Interview = false,
+                Requirement = "Hansi namizedin ish staji choxdursa ve hemin muddetlerde oz mehsuldarligi ile sechilmishse onlara ustunluk verilecek",
             };
             company.Announcment(vacancy1);
-            Vacancy project_vacany = new Vacancy()
+            Vacancy vacancy2 = new Vacancy()
             {
-                id = 1,
-                job_name = "Project Developer",
-                require_ms_certificate = true,
+                Id = 2,
+                Name = SpecialtyEnum.Maliyye.ToString(),
+                DepartmentId = 2,
+                Interview = false,
+                Requirement = "Hansi namizedin ish staji choxdursa ve hemin muddetlerde oz mehsuldarligi ile sechilmishse onlara ustunluk verilecek",
             };
-            company.vacancies.Add(project_vacany);
-            company.Declaration(project_vacany);
-            Vacancy product_vacany = new Vacancy()
+            company.Announcment(vacancy2);
+            Vacancy vacancy3 = new Vacancy()
             {
-                id = 1,
-                job_name = "Product Developer",
-                require_ms_certificate = true,
+                Id = 3,
+                Name = SpecialtyEnum.İnformasiyaTexnologiyalari.ToString(),
+                DepartmentId = 3,
+                Interview = false,
+                Requirement = "Hansi namizedin ish staji choxdursa ve hemin muddetlerde oz mehsuldarligi ile sechilmishse onlara ustunluk verilecek",
             };
-            company.vacancies.Add(product_vacany);
-            company.Declaration(product_vacany);
+            company.Announcment(vacancy3);
             Candidate candidate1 = new Candidate()
             {
-                id = 1,
-                name = "Aydan",
-                ms_certificate = true,
-                location = true,
+                Id = 1,
+                Name = "Aydan",
+                Experience = 2,
+                Progress = true,
             };
-            bool accepted=soft_vacany.CheckCandidate(candidate1);
-            if (accepted)
-            {
-                candidate1.CheckLocation();
-            }
+
+
+            vacancy1.HireCandidate(candidate1);
+            vacancy1.ChangeRequirement(true);
+            vacancy1.HireCandidate(candidate1);
+
+            Console.ReadLine();
+
+
         }
     }
 }
